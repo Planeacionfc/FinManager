@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página No Encontrada - 404</title>
+
+        <!-- Fuente externa  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+        
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}">
+    </head>
+    <body>
+
+        <!-- Contenido de la Página 404 -->
+        <div class="error-container">
+            <h1>404</h1>
+            <img style="width: 200px;" src="https://i.postimg.cc/QM6tHLLF/software-development.png" alt="ico-Mantenimiento">
+            <p>ESTA PAGINA AUN ESTA EN DESARROLLO</p>
+            <a href="{{ url_for('home') }}" class="error-button">Volver</a>
+        </div>
+    </body>
+</html>

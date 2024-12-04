@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <!-- Metadatos -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datos CMI</title>
+
+        <!-- Fuente externa -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mainHome.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        
+    </head>
+    <body>
+
+        <!-- Cabecera -->
+        <header class="header">
+            <img class="logo" src="https://i.postimg.cc/43mtVvyW/logotipo-prebel-blanco.png" alt="Logotipo">
+            <nav>
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <div class="nav-item">
+                    <a href="{{ url_for('documentation') }}">Documentación</a>
+                </div>
+                <a href="{{ url_for('page_404') }}">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="main">
+            <div class="services">
+                <div class="services__content">
+                    <div class="services__info">
+                        <div class="services__logo-container">
+                            <img src="https://i.postimg.cc/c46LrBrz/logo.png" alt="Logotipo" class="services__logo">
+                        </div>
+                        <h1 class="services__title">SERVICIOS FIN MANAGER</h1>
+                        <div class="services__buttons">
+                            <a href="{{ url_for('cmi_bp.home') }}" class="services__button">Gestionar CMI</a>
+                            <a href="{{ url_for('cts_bp.home') }}" class="services__button">Gestionar CTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de conceptos -->
+        <div class="main">
+            <div class="concepts">
+                <div class="concepts__content">
+                    <div class="concepts__info">
+
+                        <hr class="concepts__divider">
+                        <h1 class="concepts__title">INFORMACIÓN FINN MANAGER</h1>
+                        <hr id="info-cmi" class="concepts__divider">
+
+                        <!-- Contenedor para las dos columnas -->
+                        <div class="concepts__row">
+                            
+                            <!-- Columna CMI -->
+                            <div class="concepts__column">
+                                <!-- Definicion CMI -->
+                                <h2 class="concepts__section-title">CMI</h2>
+                                <div class="concepts__definition">
+                                    <p class="concepts__text">El CMI ayuda a gestionar y monitorear las diversas areas de la organizacion, asegurando que las estrategias y objetivos se alineen con los resultados operativos y financieros esperados. A menudo, incluye informacion detallada sobre como capturar y reportar datos clave, asi como guias sobre la interpretacion de estos indicadores para la toma de decisiones estrategicas.</p>
+                                </div>
+                                
+                                <!-- Objetivos CMI -->
+                                <h2 class="concepts__objectives-title">Objetivos</h2>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Alineación Estratégica</b><br> El CMI busca asegurar que las actividades y decisiones estén alineadas con los objetivos estratégicos de la organización.</p>
+                                    <img src="https://i.postimg.cc/6qdTxcWS/icono-estrategia.png" alt="Icono Estrategia" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Toma de Decisiones Informada</b><br> Proporcionar datos actualizados para tomar decisiones basadas en información sólida.</p>
+                                    <img src="https://i.postimg.cc/hGy2VbqH/icono-desicion.png" alt="Icono Decisiones" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Comunicación Transparente</b><br> Facilita una comunicación financiera clara y coherente dentro de la organización.</p>
+                                    <img src="https://i.postimg.cc/hjNM5Dvs/icono-comunicacion.png" alt="Icono Comunicación" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Identificación de Prioridades</b><br> Ayuda a priorizar recursos y actividades en las áreas más impactantes.</p>
+                                    <img src="https://i.postimg.cc/vZGhjSYJ/icono-prioridad.png" alt="Icono Prioridad" class="concepts__objective-icon">
+                                </div>
+                                <div class="concepts__objective" style="display: block; text-align: center;">
+                                    <h3 class="concepts__objectives-title">¿Qué esperas para empezar a trabajar en el CMI?</h3>
+                                    <a href="{{ url_for('cmi_bp.home') }}" class="services__button">Gestionar CMI</a>
+                                </div>
+                                <hr class="concepts__divider">
+                            </div>
+
+                            <div class="vertical-line"></div>
+
+                            <!-- Columna Inventarios -->
+                            <div class="concepts__column">
+
+                                <!-- Definicion Inventarios -->
+                                <h2 class="concepts__section-title">CTS</h2>
+                                <div class="concepts__definition">
+                                    <p class="concepts__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eius sed perspiciatis nisi sequi enim perferendis esse ipsum tempora dolor ab distinctio corporis, voluptates temporibus maxime praesentium fugiat, eaque pariatur?. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus maxime sunt qui blanditiis?</p>
+                                </div>
+
+                                <!-- Objetivos Inventarios -->
+                                <h2 class="concepts__objectives-title">Objetivos</h2>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Objetivo numero 1</b><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, minus soluta, quaerat commodi sed temporibus sit illo consectetur.</p>
+                                    <img src="https://i.postimg.cc/YCSM9Cbn/icono-stock.png" alt="Icono Stock" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Objetivo numero 2</b><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <img src="https://i.postimg.cc/Y9PThCTC/icono-costos.png" alt="Icono Costos" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Objetivo numero 3</b><br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex sint nemo sequi? Recusandae ipsum, inventore, architecto unde ?</p>
+                                    <img src="https://i.postimg.cc/c4x2gRpp/icono-flujo.png" alt="Icono Flujo de Inventario" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective">
+                                    <p class="concepts__objective-text"><b>- Objetivo numero 4</b><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit..</p>
+                                    <img src="https://i.postimg.cc/7ZkcygDk/icono-prioridad-productos.png" alt="Icono Productos Críticos" class="concepts__objective-icon">
+                                </div>
+
+                                <div class="concepts__objective" style="display: block; text-align: center;">
+                                    <h3 class="concepts__objectives-title">¿Ya estás listo para gestionar CTS?</h3>
+                                    <a href="{{ url_for('page_404') }}" class="services__button">Gestionar Inventarios</a>
+                                </div>
+                                <hr class="concepts__divider">
+                            </div>
+                        </div> <!-- Fin del row de conceptos -->
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

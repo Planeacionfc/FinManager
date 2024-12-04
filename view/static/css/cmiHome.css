@@ -1,0 +1,250 @@
+
+body {
+    font-family: 'Hanken Grotesk';
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #edebe3;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px 20px;
+    margin: 0px 20px;
+}
+
+.main-content .form-container {
+    background-color: rgba(255, 255, 255, 0.466);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 10px;
+}
+.main-content .form-container h2 {
+    color: #555;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+.main-content .form-container .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-content .form-container .form-group label {
+    display: block;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.main-content .form-container .form-group select,
+.main-content .form-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; 
+}
+.main-content .form-container .form-group input[type="file"] {
+    padding: 5px;
+}
+.main-content .form-container .form-group .btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.form-group button {
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: #4075F0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+.form-group a {
+    font-size: 16px;
+    color: #4075F0;
+    text-align: center;
+    text-decoration: none;
+}
+.form-group button:hover {
+    background-color: #365bb2;
+}
+
+#extrafields-v_y_c, #extrafields-gastos {
+    display: none;
+}
+
+/* Ventanas Modales */
+.modal,
+.progress-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.modal-content,
+.progress-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 6px;
+    width: 60%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.modal-content h3,
+.progress-content h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px;
+}
+
+.modal-content button.cancel {
+    background-color: #f44336;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.modal-content button.cancel:hover {
+    background-color: #e53935;
+}
+
+.progress-modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.4);
+justify-content: center;
+align-items: center;
+}
+
+.progress-content {
+background-color: #ffffff;
+margin: 15% auto;
+padding: 20px;
+border-radius: 6px;
+width: 80%;
+max-width: 350px;
+text-align: center;
+}
+
+.progress-content h3 {
+margin: 0;
+font-size: 16px;
+font-weight: 600;
+}
+
+.progress-bar-container {
+width: 100%;
+background-color: #ddd;
+border-radius: 5px;
+overflow: hidden;
+margin-top: 20px;
+}
+
+.progress-bar {
+width: 0;
+height: 16px;
+background-color: #4075F0;
+transition: width 0.4s ease;
+}
+
+/* Estilos para el texto del progreso */
+.progress-Text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    color: #4075F0; /* Color del texto del progreso */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para el texto */
+    margin-bottom: 16px;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@media (max-width: 1000px) {
+
+    .main-content {
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .form-container{
+        margin: 5px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .main-content {
+        flex-direction: column;
+        margin: 20px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .main-content .form-container {
+        padding: 20px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    .main-content .info {
+        max-width: 80%;
+    }
+
+    .btn-group{
+        flex-wrap: wrap;
+    }
+
+    #container{
+        font-size: 25px;
+    }
+}

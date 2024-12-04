@@ -1,0 +1,46 @@
+.services__logo-container img{
+    max-width: 150px;
+    margin-top: 20px;
+}
+
+
+
+/* Estilos para el acordeón */
+.accordion__section {
+    margin-bottom: 1.5rem;
+}
+
+.accordion__button {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__content {
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.accordion__content video {
+    width: 70%;
+    z-index: 10;
+}
+
+@media (max-width: 900px) 
+{
+    .accordion__content video{
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+*{
+scroll-behavior: smooth;
+}
+body {
+    font-family: 'Hanken Grotesk';
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #edebe3;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #edebe3; 
+    margin: auto;
+    height: 80vh;
+}
+.error-container h1 {
+    font-size: 50px;
+    color: #486DB2;
+    margin-bottom: 20px;
+}
+.error-container p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+.error-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #8c96a1;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.error-button:hover {
+    background-color: #4d5461;
+}

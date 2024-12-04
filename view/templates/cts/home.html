@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datos CMI</title>
+
+        <!-- Fuente externa  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"> 
+        
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cmiHome.css') }}">
+    </head>
+    <body>
+
+        <!-- Cabecera -->
+        <header class="header">
+            <img class="logo" src="https://i.postimg.cc/43mtVvyW/logotipo-prebel-blanco.png" alt="">
+            <nav>
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <a href="{{ url_for('documentation') }}">Documentacion</a>
+                <a href="{{ url_for('page_404') }}">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="main">
+            </div>
+            <div class="servicios-container">
+                <div class="info-content">
+                    <h1>Gestion ETL - CTS</h1>
+                    <p>Esta herramienta permite gestionar todo el proceso ETL (Extract, Transform & Load) ó (Extraer, Transformar y Cargar información) a través de SAP, para el Costo de Servir (CTS) de Planeacion Financiera, de una forma eficaz y amigable.</p>
+                    <div class="btn-group">
+                        <a href="{{ url_for('cmi_bp.transform') }}">Ejecutar ETL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

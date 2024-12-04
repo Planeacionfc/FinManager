@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <!-- Metadatos -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datos CMI</title>
+
+        <!-- Fuente externa -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mainHome.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/headerDoc.css') }}">
+        <link rel="stylesheet" href="../static/css/headerDoc.css">
+        <link rel="stylesheet" href="../static/css/mainHome.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/documentation.css') }}">
+        <link rel="stylesheet" href="../static/css/documentation.css">
+
+        <!-- Archivos js -->
+        <script src="{{ url_for('static', filename='js/documentation.js') }}" defer></script>
+        <script src="../static/js/documentation.js" defer></script>
+
+    </head>
+    <body>
+
+        <!-- Cabecera -->
+        <header class="header">
+            <img class="logo" src="https://i.postimg.cc/43mtVvyW/logotipo-prebel-blanco.png" alt="Logotipo">
+            <div class="header__title">
+                <h1 class="header__title">Documentación</h1>
+            </div>
+            <nav>
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <div class="nav-item">
+                    <a href="#">Información</a>
+                    <div class="dropdown">
+                        <a href="#info-cmi">CMI</a>
+                        <a href="#otro-id">Inventarios</a>
+                    </div>
+                </div>
+                <a href="{{ url_for('page_404') }}">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="main">
+            <div class="services">
+                <div class="services__content">
+                    <div class="services__info">
+                        <div class="services__logo-container">
+                            <img src="https://i.postimg.cc/6qG9Lzr9/icono-doc.png" alt="Logotipo" class="services__logo">
+                        </div>
+                        <h1 class="services__title">DOCUMENTACION CMI</h1>
+                        <h3>Aqui encontrarás documentacion sobre como actualizar el CMI mes a mes y documentacion técnica del codigo para realizar cambios importantes</h3>
+                        <hr>
+                        <div class="accordion">
+                            <!-- Primera sección -->
+                            <div class="accordion__section">
+                                <h3>Actualizar CMI Mensual</h3>
+                                <button class="accordion__button">Clic para ver el video</button>
+                                <div class="accordion__content">
+                                    <video width="400px" controls>
+                                        <source src="../static/assets/update_cmi.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+        
+                            <!-- Segunda sección -->
+                            <div class="accordion__section">
+                                <h3>Actualizar Plantilla BI (PAC)</h3>
+                                <p>Es un proceso de caracter obligatorio mensual</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/update_pac.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Tercera sección -->
+                            <div class="accordion__section">
+                                <h3>Actualizar Regalias y Flete</h3>
+                                <p>Es un proceso de caracter obligatorio mensual</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/regalias_flete.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Cuarta sección -->
+                            <div class="accordion__section">
+                                <h3>Actualizar PAC Presupuesto</h3>
+                                <p>Es un proceso de caracter obligatorio Anual</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/pac_ppto.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="main">
+            <div class="services">
+                <div class="services__content">
+                    <div class="services__logo-container">
+                        <img src="https://i.postimg.cc/QM6tHLLF/software-development.png" alt="Logotipo" class="services__logo">
+                    </div>
+                    <div class="services__info">
+                        <h1 style="margin-top: 20px;" class="services__title">DOCUMENTACION TECNICA</h1>
+                        <h3>Aqui encontrarás documentacion técnica del codigo para entender un poco mejor que se está haciendo internamente</h3>
+                        <hr>
+                        <div class="accordion">
+                            <!-- Primera sección -->
+                            <div class="accordion__section">
+                                <h3>Funcionalidad general</h3>
+                                <p>ArquitÑectura MVC</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400px" controls>
+                                        <source src="../static/assets/funcionalidad_codigo.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+        
+                            <!-- Segunda sección -->
+                            <div class="accordion__section">
+                                <h3>Otros procesos de funcionalidad</h3>
+                                <p>Explicidad de codigo</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/funcionalidad_2.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Tercera sección -->
+                            <div class="accordion__section">
+                                <h3>Cambio de porcentajes para rubros</h3>
+                                <p>Generalmente se cambian cada año</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/cambiar_porcentajes.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+
+                             <!-- Cuarta sección -->
+                             <div class="accordion__section">
+                                <h3>Cambio en la logica de rubros</h3>
+                                <p>Generalmente cambia al cambiar la forma de calcularse</p>
+                                <button class="accordion__button">Ver video</button>
+                                <div class="accordion__content">
+                                    <video width="400" controls>
+                                        <source src="../static/assets/cambio_rubro.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de videos.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Clave</title>
+
+    <!-- Fuente externa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos propios -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .main h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            transition: border-color 0.3s;
+        }
+
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <h1>Validar Clave</h1>
+        <div class="input-container">
+            <input id="password" type="password" placeholder="Ingrese la clave">
+        </div>
+        <button onclick="validatePassword()">Ingresar</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <script>
+        // Clave quemada en el código
+        const validPassword = "pfinanciera2025";
+
+        // Función para validar la clave
+        function validatePassword() {
+            const inputPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (inputPassword === validPassword) {
+                window.location.href = "{{ url_for('home') }}";
+            } else {
+                errorMessage.textContent = "Clave incorrecta. Por favor, inténtalo nuevamente.";
+            }
+        }
+    </script>
+</body>
+</html>
