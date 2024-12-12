@@ -350,7 +350,7 @@ def hoja_bd_gastos(df_edg: pd.DataFrame, año, mes, mes_largo):
 
             bd_final_ppto = bd_final.drop(columns=['AÑO', 'VALOR REAL'])
             path_bd_final_ppto = os.path.join(
-                base_dir, *sub_dirs_final_db, f'DB_FINAL_{mes}.{año}_PPTO.xlsx'
+                base_dir, *sub_dirs_final_db_rep, f'DB_FINAL_{mes}.{año}_PPTO.xlsx'
             )
 
             if os.path.exists(path_bd_final_ppto):
@@ -369,7 +369,7 @@ def hoja_bd_gastos(df_edg: pd.DataFrame, año, mes, mes_largo):
                 base_dir, *sub_dirs_final_db, f'DB_FINAL_{mes}.{año}_REAL.xlsx'
             )
 
-            if os.path.exists(path_bd_final_ppto):
+            if os.path.exists(path_bd_final_real):
                 path_bd_final_real = os.path.join(
                     base_dir, *sub_dirs_final_db_rep, f'DB_FINAL_{mes}.{año}_REPROCESADA_REAL.xlsx'
                 )

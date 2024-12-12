@@ -128,7 +128,8 @@ def hoja_2024(df_2024: pd.DataFrame, año, mes, mes_largo):
         # Mapear y reemplazar canales
         mapa_canales = {
             'PUNTOS DE VENTA': 'ALMACENES',
-            'BAZAR VENTA DIRECTA': 'ALMACENES'
+            'BAZAR VENTA DIRECTA': 'ALMACENES',
+            'BAZARES-FERIAS-2': 'ALMACENES'
         }
         df_2024['CANAL'] = df_2024['CANAL'].replace(mapa_canales)
         df_2024.loc[(df_2024['CANAL'] == 'SIN ASIGNAR') & (df_2024['MARCA'] != 'SIN ASIGNAR'), 'CANAL'] = 'OTROS'
@@ -219,6 +220,9 @@ def hoja_2024(df_2024: pd.DataFrame, año, mes, mes_largo):
         df_2024 = df_2024[~((df_2024['MARCA'] == 'SIN ASIGNAR') & (df_2024['CONCEPTO'] == 'OTROS IMPUESTOS'))]
         df_2024 = df_2024[~(df_2024['CANAL'] == 'TIENDAS PROPIAS')]
 
+        #Eliminar costos dle periodo
+        df_2024 = df_2024[~(df_2024['CONCEPTO'] == 'CMV COSTOS DEL PERIODO')]
+
         mapa_marcas = {
             'OTROS IMPUESTOS': '4X1000',
         }
@@ -227,6 +231,7 @@ def hoja_2024(df_2024: pd.DataFrame, año, mes, mes_largo):
 
         # Traer la parte de costos del periodo
         df_costos_per = cmiController.process_cmi_costos_per(año, mes_largo)
+
         df_2024 = pd.concat([df_2024, df_costos_per], ignore_index=True)
 
         #  Mapear y agregar mes y año

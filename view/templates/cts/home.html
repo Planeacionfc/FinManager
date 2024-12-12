@@ -3,19 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Datos CMI</title>
+        <title>Proceso ETL CTS</title>
 
         <!-- Fuente externa  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"> 
-        
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+
         <!-- Estilos propios -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/cmiHome.css') }}">
+        <link rel="stylesheet" href="../../static/css/cmiHome.css">
+        <link rel="stylesheet" href="../../static/css/header.css">
+
+
+        <!-- Archivos js -->
+        <script src="{{ url_for('static', filename='js/ctsTransform.js') }}" defer></script>
     </head>
     <body>
-
         <!-- Cabecera -->
         <header class="header">
             <img class="logo" src="https://i.postimg.cc/43mtVvyW/logotipo-prebel-blanco.png" alt="">
@@ -25,17 +30,92 @@
                 <a href="{{ url_for('page_404') }}">Contacto</a>
             </nav>
         </header>
+    </div>
 
-        <!-- Contenido principal -->
-        <div class="main">
+        <section class="main-content">
+            <div class="form-container">
+                <h2 style="margin: 0;">Gestion ETL - CTS</h2>
+                <p>Esta herramienta permite gestionar todo el proceso ETL (Extract, Transform & Load) ó (Extraer, Transformar y Cargar información) a través de SAP, para el Costo de Servir (CTS) de Planeacion Financiera, de una forma eficaz y amigable.</p>
+                <div class="btn-group">
+                </div>
             </div>
-            <div class="servicios-container">
-                <div class="info-content">
-                    <h1>Gestion ETL - CTS</h1>
-                    <p>Esta herramienta permite gestionar todo el proceso ETL (Extract, Transform & Load) ó (Extraer, Transformar y Cargar información) a través de SAP, para el Costo de Servir (CTS) de Planeacion Financiera, de una forma eficaz y amigable.</p>
-                    <div class="btn-group">
-                        <a href="{{ url_for('cmi_bp.transform') }}">Ejecutar ETL</a>
+            
+            <div class="form-container">
+                <h2 style="margin: 0;">Procesar ETL</h2>
+                <form id="data-form" onsubmit="event.preventDefault();">
+
+                    <!-- Campo de fecha -->
+                    <div class="form-group">
+                        <label style="margin-top: 5px;" for="execution-date">Fecha</label>
+                        <input type="date" id="execution-date" name="execution-date" required>
                     </div>
+
+                    <!-- Campo de categoría -->
+                    <div class="form-group">
+                        <label for="category">Categoría</label>
+                        <select id="category" name="category" onchange="toggleExtraFields()">
+                            <option value="">Seleccione una opción</option>
+                            <option value="1">OPCION 1</option>
+                            <option value="1">OPCION 2</option>
+                        </select>
+                    </div>
+        
+                    <div id="extrafields-venta" class="extra-fields" style="display: none;">
+                        <div class="form-group">
+                            <label>Obtener datos de OPCION 1 de SAP</label>
+                            <button type="button" onclick="confirmExecuteETL('venta')">Ejecutar</button>
+                        </div>
+                    </div>
+        
+                    <div id="extrafields-gastos" class="extra-fields" style="display: none;">
+                        <div class="form-group">
+                            <label>Obtener datos de OPCION 2 de SAP</label>
+                            <button type="button" onclick="confirmExecuteETL('2')">Ejecutar</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="text-align: center;">¿No sabes que datos seleccionar?</label>
+                        <a href="{{ url_for('documentation') }}">Ayuda</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Modal de confirmación -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <h2 style="margin-top: 5px;">ATENCION</h2>
+                <h3 style="padding-bottom: 15px;">RECUERDA REALIZAR TODOS LOS PROCESOS MANUALES ANTES DE CONTINUAR</h3>
+                <button id="confirmYes">EJECUTAR</button>
+                <button id="confirmNo" class="cancel">CANCELAR</button>
+            </div>
+        </div>
+
+        <!-- Modal de succes -->
+        <div id="successModal" class="modal" style="display: none;">  <!-- Modal oculto por defecto -->
+            <div class="modal-content">
+                <h3>Finalizado correctamente</h3>
+                <p id="successMessage"></p>  <!-- Elemento para el mensaje de success -->
+                <button onclick="closeSuccessModal()" style="background-color: #40cf23;">Aceptar</button>
+            </div>
+        </div>
+
+        <!-- Modal de error -->
+        <div id="errorModal" class="modal" style="display: none;">  <!-- Modal oculto por defecto -->
+            <div class="modal-content">
+                <h3>Ha ocurrido un error</h3>
+                <p id="errorMessage"></p>  <!-- Elemento para el mensaje de error -->
+                <button onclick="closeErrorModal()" style="background-color: #e53935;">Aceptar</button>
+            </div>
+        </div>
+
+        <!-- Modal de progreso -->
+        <div id="progressModal" class="progress-modal">
+            <div class="progress-content">
+                <h3 class="progress-Text" id="progressText">Procesando... (0%)</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
                 </div>
             </div>
         </div>

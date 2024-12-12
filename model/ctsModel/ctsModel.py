@@ -1,6 +1,6 @@
 from pyrfc import Connection, ABAPApplicationError, LogonError, CommunicationError
 
-class cmiModel:
+class ctsModel:
     def __init__(self):
         self.error_message = None
 
